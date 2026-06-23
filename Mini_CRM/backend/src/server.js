@@ -11,7 +11,7 @@ connectDB();
 
 // Middleware
 app.use(cors({
-  origin: 'https://mini-crm-frontend.onrender.com',
+  origin: 'https://ceofactory.onrender.com',
   credentials: true
 }));
 app.use(express.json());
