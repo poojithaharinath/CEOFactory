@@ -32,7 +32,7 @@ const Dashboard = () => {
     try {
       setLoading(true);
       setError('');
-      const res = await api.get('/opportunities');
+      const res = await api.get('/api/opportunities');
       setOpportunities(res.data);
     } catch (err) {
       console.error(err);
@@ -49,9 +49,9 @@ const Dashboard = () => {
   const handleCreateOrUpdate = async (formData) => {
     try {
       if (editingOpportunity) {
-        await api.put(`/opportunities/${editingOpportunity._id}`, formData);
+        await api.put(`/api/opportunities/${editingOpportunity._id}`, formData);
       } else {
-        await api.post('/opportunities', formData);
+        await api.post('/api/opportunities', formData);
       }
       setIsFormOpen(false);
       setEditingOpportunity(null);
@@ -65,7 +65,7 @@ const Dashboard = () => {
     if (!window.confirm('Are you sure you want to delete this opportunity?')) return;
     try {
       setError('');
-      await api.delete(`/opportunities/${id}`);
+      await api.delete(`/api/opportunities/${id}`);
       fetchOpportunities();
     } catch (err) {
       console.error(err);
