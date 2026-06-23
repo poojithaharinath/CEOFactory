@@ -11,7 +11,7 @@ connectDB();
 
 // Middleware
 app.use(cors({
-  origin: '*', // Allow all origins for this task, can be configured for production
+  origin: 'https://mini-crm-frontend.onrender.com',
   credentials: true
 }));
 app.use(express.json());
